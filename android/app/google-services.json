@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "272499821375",
+    "project_id": "habs-abcf0",
+    "storage_bucket": "habs-abcf0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272499821375:android:07c8ebbacd969dd040618a",
+        "android_client_info": {
+          "package_name": "com.habs.dashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272499821375-5la4mvl0de3s209p0ahr399aeu40cn6v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.habs.dashboard",
+            "certificate_hash": "4d5fe4d128fcb324b6039e7d6584019565e1b407"
+          }
+        },
+        {
+          "client_id": "272499821375-u5352oe45rhf6m5vd80t6fi3kg2j1u51.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.habs.dashboard",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "272499821375-uq3bvmohk6ihaqehdlvbdrree07a8dgl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvgmTPabLn62HcJ-ETxqnlY5lrJxbWs8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272499821375-2k1q4vnulqmmhvuv2hfqq1b75732a6j5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "272499821375-caaokgi8grbh2ken55o2kn55r0c41o22.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.habs.dashboard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
