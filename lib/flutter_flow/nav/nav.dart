@@ -192,6 +192,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'privacyPage',
               path: 'privacyPage',
               builder: (context, params) => PrivacyPageWidget(),
+            ),
+            FFRoute(
+              name: 'licensePage',
+              path: 'licensePage',
+              builder: (context, params) => LicensePageWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

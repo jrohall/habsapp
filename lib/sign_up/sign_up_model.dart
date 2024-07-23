@@ -11,6 +11,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class SignUpModel extends FlutterFlowModel<SignUpWidget> {
+  ///  Local state fields for this page.
+
+  bool checkAcknowledge = false;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -23,6 +27,8 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  // State field(s) for Checkbox widget.
+  bool? checkboxValue;
 
   @override
   void initState(BuildContext context) {

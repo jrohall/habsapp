@@ -118,6 +118,35 @@ class _MobileMenuBarWidgetState extends State<MobileMenuBarWidget> {
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed(
+                        'licensePage',
+                        extra: <String, dynamic>{
+                          kTransitionInfoKey: TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
+                          ),
+                        },
+                      );
+                    },
+                    child: Text(
+                      'EULA',
+                      textAlign: TextAlign.start,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
+                    ),
+                  ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed(
                         'supportPage',
                         extra: <String, dynamic>{
                           kTransitionInfoKey: TransitionInfo(
@@ -207,7 +236,7 @@ class _MobileMenuBarWidgetState extends State<MobileMenuBarWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
-                ].divide(SizedBox(width: 24.0)),
+                ].divide(SizedBox(width: 10.0)),
               ),
             ],
           ),

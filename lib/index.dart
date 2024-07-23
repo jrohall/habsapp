@@ -15,3 +15,4 @@ export '/plans_page/plans_page_widget.dart' show PlansPageWidget;
 export '/landing_page/landing_page_widget.dart' show LandingPageWidget;
 export '/support_page/support_page_widget.dart' show SupportPageWidget;
 export '/privacy_page/privacy_page_widget.dart' show PrivacyPageWidget;
+export '/license_page/license_page_widget.dart' show LicensePageWidget;
