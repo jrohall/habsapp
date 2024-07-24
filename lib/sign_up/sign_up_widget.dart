@@ -582,7 +582,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   AutoSizeText(
-                                    'Use a social platform to continue',
+                                    'Use a social platform to continue \n(please acknowledge checkbox above)',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
@@ -612,22 +612,28 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     borderRadius: 12.0,
                                     borderWidth: 1.0,
                                     buttonSize: 44.0,
+                                    disabledIconColor:
+                                        FlutterFlowTheme.of(context).lineColor,
                                     icon: Icon(
                                       Icons.apple,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                     ),
-                                    onPressed: () async {
-                                      GoRouter.of(context).prepareAuthEvent();
-                                      final user = await authManager
-                                          .signInWithApple(context);
-                                      if (user == null) {
-                                        return;
-                                      }
+                                    onPressed: !_model.checkAcknowledge
+                                        ? null
+                                        : () async {
+                                            GoRouter.of(context)
+                                                .prepareAuthEvent();
+                                            final user = await authManager
+                                                .signInWithApple(context);
+                                            if (user == null) {
+                                              return;
+                                            }
 
-                                      context.pushNamedAuth(
-                                          'createProfile', context.mounted);
-                                    },
+                                            context.pushNamedAuth(
+                                                'createProfile',
+                                                context.mounted);
+                                          },
                                   ),
                                 ),
                                 Padding(
@@ -638,23 +644,29 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     borderRadius: 12.0,
                                     borderWidth: 1.0,
                                     buttonSize: 44.0,
+                                    disabledIconColor:
+                                        FlutterFlowTheme.of(context).lineColor,
                                     icon: FaIcon(
                                       FontAwesomeIcons.google,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       size: 16.0,
                                     ),
-                                    onPressed: () async {
-                                      GoRouter.of(context).prepareAuthEvent();
-                                      final user = await authManager
-                                          .signInWithGoogle(context);
-                                      if (user == null) {
-                                        return;
-                                      }
+                                    onPressed: !_model.checkAcknowledge
+                                        ? null
+                                        : () async {
+                                            GoRouter.of(context)
+                                                .prepareAuthEvent();
+                                            final user = await authManager
+                                                .signInWithGoogle(context);
+                                            if (user == null) {
+                                              return;
+                                            }
 
-                                      context.pushNamedAuth(
-                                          'createProfile', context.mounted);
-                                    },
+                                            context.pushNamedAuth(
+                                                'createProfile',
+                                                context.mounted);
+                                          },
                                   ),
                                 ),
                                 Padding(
@@ -665,17 +677,21 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     borderRadius: 12.0,
                                     borderWidth: 1.0,
                                     buttonSize: 44.0,
+                                    disabledIconColor:
+                                        FlutterFlowTheme.of(context).lineColor,
                                     icon: Icon(
                                       Icons.phone_rounded,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       size: 20.0,
                                     ),
-                                    onPressed: () async {
-                                      context.pushNamed('phoneSignIn');
+                                    onPressed: !_model.checkAcknowledge
+                                        ? null
+                                        : () async {
+                                            context.pushNamed('phoneSignIn');
 
-                                      context.pushNamed('createProfile');
-                                    },
+                                            context.pushNamed('createProfile');
+                                          },
                                   ),
                                 ),
                               ],

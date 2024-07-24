@@ -473,6 +473,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    if (Navigator.of(context).canPop()) {
+                                      context.pop();
+                                    }
                                     context.pushNamed('plansPage');
                                   },
                                   child: Container(
@@ -1198,7 +1201,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     await launchURL(
-                                        'https://habsapp.flutterflow.app/privacyPage');
+                                        'https://habsapp.flutterflow.app/licensePage');
                                   },
                                   child: Container(
                                     width: double.infinity,

@@ -631,7 +631,7 @@ class _EditHabitFormWidgetState extends State<EditHabitFormWidget> {
                                                 controller: _model
                                                         .radioButtonValueController ??=
                                                     FormFieldController<String>(
-                                                        null),
+                                                        'Weekly'),
                                                 optionHeight: 32.0,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)

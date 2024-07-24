@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/side_bar_nav_widget.dart';
 import '/flutter_flow/flutter_flow_checkbox_group.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -60,6 +61,106 @@ class _HabitFormWidgetState extends State<HabitFormWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: responsiveVisibility(
+          context: context,
+          tabletLandscape: false,
+          desktop: false,
+        )
+            ? PreferredSize(
+                preferredSize: Size.fromHeight(100.0),
+                child: AppBar(
+                  backgroundColor:
+                      FlutterFlowTheme.of(context).primaryBackground,
+                  automaticallyImplyLeading: false,
+                  actions: [],
+                  flexibleSpace: FlexibleSpaceBar(
+                    title: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 0.0, 0.0),
+                                child: FlutterFlowIconButton(
+                                  borderColor: Colors.transparent,
+                                  borderRadius: 30.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 50.0,
+                                  icon: Icon(
+                                    Icons.arrow_back_rounded,
+                                    size: 30.0,
+                                  ),
+                                  onPressed: () async {
+                                    context.pop();
+                                  },
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    4.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  'Back',
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineMediumFamily,
+                                        fontSize: 16.0,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMediumFamily),
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      24.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Add Habit',
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMediumFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineMediumFamily),
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    centerTitle: true,
+                    expandedTitleScale: 1.0,
+                  ),
+                  elevation: 0.0,
+                ),
+              )
+            : null,
         body: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -521,7 +622,7 @@ class _HabitFormWidgetState extends State<HabitFormWidget> {
                                                 controller: _model
                                                         .radioButtonValueController ??=
                                                     FormFieldController<String>(
-                                                        null),
+                                                        'Weekly'),
                                                 optionHeight: 32.0,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)

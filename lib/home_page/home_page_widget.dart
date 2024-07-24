@@ -292,7 +292,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             List<StatisticsRecord>
                                                                 progressBarStatisticsRecordList =
                                                                 snapshot.data!;
-
                                                             // Return an empty Container when the item does not exist.
                                                             if (snapshot.data!
                                                                 .isEmpty) {
@@ -304,6 +303,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                     ? progressBarStatisticsRecordList
                                                                         .first
                                                                     : null;
+
                                                             return CircularPercentIndicator(
                                                               percent: functions.getMonthlyConsistency(
                                                                   progressBarStatisticsRecord!
@@ -532,7 +532,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     List<StatisticsRecord>
                                                         wrapStatisticsRecordList =
                                                         snapshot.data!;
-
                                                     // Return an empty Container when the item does not exist.
                                                     if (snapshot
                                                         .data!.isEmpty) {
@@ -544,6 +543,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             ? wrapStatisticsRecordList
                                                                 .first
                                                             : null;
+
                                                     return Builder(
                                                       builder: (context) {
                                                         final shouldComplete =

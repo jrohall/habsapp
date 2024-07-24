@@ -174,11 +174,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => EditProfileWidget(),
             ),
             FFRoute(
-              name: 'plansPage',
-              path: 'plansPage',
-              builder: (context, params) => PlansPageWidget(),
-            ),
-            FFRoute(
               name: 'landingPage',
               path: 'landingPage',
               builder: (context, params) => LandingPageWidget(),
@@ -197,6 +192,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'licensePage',
               path: 'licensePage',
               builder: (context, params) => LicensePageWidget(),
+            ),
+            FFRoute(
+              name: 'plansPage',
+              path: 'plansPage',
+              builder: (context, params) => PlansPageWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
