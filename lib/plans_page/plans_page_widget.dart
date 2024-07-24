@@ -267,6 +267,8 @@ class _PlansPageWidgetState extends State<PlansPageWidget> {
                                           );
                                         },
                                       );
+
+                                      context.pushNamed('profilePage');
                                     } else {
                                       await showDialog(
                                         context: context,
@@ -287,8 +289,6 @@ class _PlansPageWidgetState extends State<PlansPageWidget> {
                                         },
                                       );
                                     }
-
-                                    context.pushNamed('profilePage');
                                   }
 
                                   setState(() {});
