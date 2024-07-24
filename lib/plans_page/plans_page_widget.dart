@@ -138,43 +138,59 @@ class _PlansPageWidgetState extends State<PlansPageWidget> {
                           children: [
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 0.0, 24.0, 12.0),
-                              child: Text(
-                                isWeb
-                                    ? 'Premium Monthly'
-                                    : revenue_cat.offerings!.current!.monthly!
-                                        .storeProduct.title,
-                                style: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .labelMediumFamily,
-                                      fontSize: 18.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMediumFamily),
-                                    ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 24.0, 0.0),
-                              child: Text(
-                                'Gain ability to create unlimited habits!',
-                                style: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .labelMediumFamily,
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMediumFamily),
+                              child: Container(
+                                width: 200.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 24.0, 12.0),
+                                      child: Text(
+                                        isWeb
+                                            ? 'Premium Monthly'
+                                            : revenue_cat.offerings!.current!
+                                                .monthly!.storeProduct.title,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
+                                              fontSize: 18.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.bold,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMediumFamily),
+                                            ),
+                                      ),
                                     ),
+                                    Text(
+                                      'Gain ability to create unlimited habits! This is a subscription that will auto-renew every month.',
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMediumFamily),
+                                          ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ],
@@ -188,9 +204,8 @@ class _PlansPageWidgetState extends State<PlansPageWidget> {
                           children: [
                             Text(
                               isWeb
-                                  ? '\$0.99'
-                                  : revenue_cat.offerings!.current!.monthly!
-                                      .storeProduct.priceString,
+                                  ? '\$0.99/mo'
+                                  : '${revenue_cat.offerings!.current!.monthly!.storeProduct.priceString}/mo',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -393,7 +408,7 @@ class _PlansPageWidgetState extends State<PlansPageWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              '\$0.00',
+                              '\$0.00/mo',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
