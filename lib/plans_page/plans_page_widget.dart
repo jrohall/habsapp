@@ -143,7 +143,7 @@ class _PlansPageWidgetState extends State<PlansPageWidget> {
                                 isWeb
                                     ? 'Premium Monthly'
                                     : revenue_cat.offerings!.current!.monthly!
-                                        .identifier,
+                                        .storeProduct.title,
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
