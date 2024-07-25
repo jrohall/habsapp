@@ -147,6 +147,7 @@ class _PlansPageWidgetState extends State<PlansPageWidget> {
                                 ),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
