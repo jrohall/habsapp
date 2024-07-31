@@ -276,8 +276,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                           ),
                                         ),
                                         Text(
-                                          revenue_cat.activeEntitlementIds
-                                                  .contains(currentUserUid)
+                                          _model.hasSubscription
                                               ? 'Premium Tier'
                                               : 'Free Tier',
                                           style: FlutterFlowTheme.of(context)
