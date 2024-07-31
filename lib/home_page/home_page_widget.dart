@@ -1111,10 +1111,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         currentUserReference,
                                                   ),
                                                 );
-                                                if (revenue_cat
-                                                    .activeEntitlementIds
-                                                    .contains(
-                                                        currentJwtToken)) {
+                                                final isEntitled =
+                                                    await revenue_cat
+                                                            .isEntitled(
+                                                                'Premium') ??
+                                                        false;
+                                                if (!isEntitled) {
+                                                  await revenue_cat
+                                                      .loadOfferings();
+                                                }
+
+                                                if (isEntitled) {
                                                   context
                                                       .pushNamed('habitForm');
                                                 } else {

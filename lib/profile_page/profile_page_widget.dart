@@ -37,6 +37,22 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
     super.initState();
     _model = createModel(context, () => ProfilePageModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      final isEntitled = await revenue_cat.isEntitled('Premium') ?? false;
+      if (!isEntitled) {
+        await revenue_cat.loadOfferings();
+      }
+
+      if (isEntitled) {
+        _model.hasSubscription = true;
+        setState(() {});
+      } else {
+        _model.hasSubscription = false;
+        setState(() {});
+      }
+    });
+
     animationsMap.addAll({
       'containerOnActionTriggerAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
@@ -261,8 +277,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                         ),
                                         Text(
                                           revenue_cat.activeEntitlementIds
-                                                  .contains(
-                                                      currentUserReference?.id)
+                                                  .contains(currentUserUid)
                                               ? 'Premium Tier'
                                               : 'Free Tier',
                                           style: FlutterFlowTheme.of(context)
@@ -1293,7 +1308,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         await Share.share(
-                                          '',
+                                          'https://habsapp.flutterflow.app/',
                                           sharePositionOrigin:
                                               getWidgetBoundingBox(context),
                                         );

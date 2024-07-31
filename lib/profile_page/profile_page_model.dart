@@ -16,6 +16,10 @@ import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 
 class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
+  ///  Local state fields for this page.
+
+  bool hasSubscription = false;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
