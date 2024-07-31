@@ -285,11 +285,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                 fontFamily:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMediumFamily,
-                                                color: revenue_cat
-                                                            .activeEntitlementIds
-                                                            .contains(
-                                                                currentJwtToken) ==
-                                                        true
+                                                color: _model.hasSubscription
                                                     ? FlutterFlowTheme.of(
                                                             context)
                                                         .primary
